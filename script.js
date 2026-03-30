@@ -24,7 +24,7 @@ function validarFormulari(e){
     let practiques = parseFloat(document.getElementById("practiques").value);
     let actitud = parseFloat(document.getElementById("actitud").value);
     
-}
+
 
  if(nom === ""){
         mostrarError("El nom està buit");
@@ -45,3 +45,17 @@ function validarFormulari(e){
         mostrarError("Actitud incorrecte (0-10)");
         return;
     }
+
+     missatge.textContent = "";
+    missatge.className = "";
+
+    let notaFinal = calcularNotaFinal(examen, practiques, actitud);
+
+    afegirAlumne(nom, examen, practiques, actitud, notaFinal);
+
+    formulari.reset();
+}
+
+function calcularNotaFinal(examen, practiques, actitud){
+    return (examen * 0.6) + (practiques * 0.3) + (actitud * 0.1);
+}
