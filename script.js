@@ -67,7 +67,7 @@ let alumne = {
     practiques: practiques,
     actitud: actitud,
     notaFinal: notaFinal
-    
+
 };
 
     alumnes.push(alumne);
@@ -76,4 +76,27 @@ let alumne = {
     missatge.className = "correcte";
 
     mostrarAlumnes();
+}
+
+function mostrarAlumnes(){
+    cosTaula.innerHTML = "";
+
+    alumnes.forEach(alumne => {
+
+    let estat = alumne.notaFinal >= 5 ? "Aprovat" : "Suspès";
+    let classe = alumne.notaFinal >= 5 ? "aprovat" : "suspes";
+
+    let fila = `
+    <tr>
+        <td>${alumne.nom}</td>
+        <td>${alumne.examen.toFixed(2)}</td>
+        <td>${alumne.practiques.toFixed(2)}</td>
+        <td>${alumne.actitud.toFixed(2)}</td>
+        <td>${alumne.notaFinal.toFixed(2)}</td>
+        <td class="${classe}">${estat}</td>
+    </tr>
+    `;
+
+    cosTaula.innerHTML += fila;
+    });
 }
