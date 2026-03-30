@@ -100,3 +100,15 @@ function mostrarAlumnes(){
     cosTaula.innerHTML += fila;
     });
 }
+
+function ordenarAsc(){
+    alumnes.sort((a,b) => a.notaFinal - b.notaFinal);
+    mostrarAlumnes();
+
+}
+
+function ordenarDesc(){
+    alumnes.sort((a,b) => b.notaFinal - a.notaFinal);
+    mostrarAlumnes();
+    
+}
