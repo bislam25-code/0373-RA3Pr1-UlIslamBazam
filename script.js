@@ -25,3 +25,23 @@ function validarFormulari(e){
     let actitud = parseFloat(document.getElementById("actitud").value);
     
 }
+
+ if(nom === ""){
+        mostrarError("El nom està buit");
+        return;
+    }
+
+    if(isNaN(examen) || examen < 0 || examen > 10){
+        mostrarError("Examen incorrecte (0-10)");
+        return;
+    }
+
+    if(isNaN(practiques) || practiques < 0 || practiques > 10){
+        mostrarError("Pràctiques incorrecte (0-10)");
+        return;
+    }
+
+    if(isNaN(actitud) || actitud < 0 || actitud > 10){
+        mostrarError("Actitud incorrecte (0-10)");
+        return;
+    }
