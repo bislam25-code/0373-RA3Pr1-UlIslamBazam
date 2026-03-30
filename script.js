@@ -59,3 +59,21 @@ function validarFormulari(e){
 function calcularNotaFinal(examen, practiques, actitud){
     return (examen * 0.6) + (practiques * 0.3) + (actitud * 0.1);
 }
+
+function afegirAlumne(nom, examen, practiques, actitud, notaFinal){
+let alumne = {
+    nom: nom,
+    examen: examen,
+    practiques: practiques,
+    actitud: actitud,
+    notaFinal: notaFinal
+    
+};
+
+    alumnes.push(alumne);
+
+    missatge.textContent = "Alumne afegit correctament";
+    missatge.className = "correcte";
+
+    mostrarAlumnes();
+}
