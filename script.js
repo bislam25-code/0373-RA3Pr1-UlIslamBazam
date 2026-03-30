@@ -110,5 +110,11 @@ function ordenarAsc(){
 function ordenarDesc(){
     alumnes.sort((a,b) => b.notaFinal - a.notaFinal);
     mostrarAlumnes();
-    
+
+}
+
+
+function mostrarError(text){
+    missatge.textContent = text;
+    missatge.className = "error";
 }
